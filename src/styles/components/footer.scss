@@ -1,0 +1,41 @@
+.footer {
+  background-color: $white-color;
+  &__title {
+    font-size: 16px;
+    font-family: iransans-medium;
+    color: $dark-gray-color;
+  }
+
+  &__link {
+    font-size: 14px;
+  }
+  li {
+    margin-bottom: 10px;
+    color: $text-color;
+  }
+
+  &__email-input {
+    border: none;
+    background-color: $light-gray-color;
+    border-radius: 8px;
+    &:focus {
+      outline: none;
+      padding: 10px 20px;
+    }
+  }
+
+  &__email-button {
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  &__icon {
+    width: 30px;
+    filter: contrast(10%);
+    margin-left: 30px;
+    &:hover {
+      filter: contrast(100%);
+    }
+  }
+}

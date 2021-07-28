@@ -14,7 +14,7 @@ const ProductItem = ({ product }) => {
         </div>
         <h1 className="product__title">{title}</h1>
       </Link>
-      <div className="text-end my20">
+      <div className="text-end my-20">
         <span className="product__rate">{`${rate}(${count})`}</span>
         <img className="product__rate-icon" src={StarIcon} alt="" />
       </div>

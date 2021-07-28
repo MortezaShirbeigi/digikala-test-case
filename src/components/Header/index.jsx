@@ -7,17 +7,17 @@ function Header() {
   return (
     <header className="header">
       <div className="container align-center header__container">
-        <div className="col-6">
+        <div className="col-5">
           <div className="flex">
             <img
-              className="ml20 max-w100 vertical-bottom"
+              className="ml-20 max-w100 vertical-bottom"
               src={HeaderLogo}
               alt="digikala-header-logo"
             />
             <input className="flex-auto rounded8 header__search" type="text" />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-7">
           <nav className="navbar">
             <ul className="navbar__list">
               <li className="navbar__list-item">
