@@ -1,0 +1,32 @@
+.header {
+  background-color: $white-color;
+  &__container {
+    height: 100px;
+    justify-content: space-between;
+  }
+  &__search {
+    height: 30px;
+    border: none;
+    background-color: $light-gray-color;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.navbar {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__list-item {
+    margin-right: 20px;
+    a {
+      color: $nav-item-color;
+    }
+  }
+  &__list-icon {
+    vertical-align: bottom;
+    width: 23px;
+  }
+}
