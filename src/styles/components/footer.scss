@@ -28,6 +28,12 @@
     border: none;
     padding: 15px;
     border-radius: 8px;
+    cursor: pointer;
+    color: $dark-gray-color;
+    font-family: iransans-medium;
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &__icon {

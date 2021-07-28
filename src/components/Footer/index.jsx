@@ -11,7 +11,6 @@ const Footer = () => {
         <div className="col-8">
           <div className="container">
             <div className="col-4">
-              <p></p>
               <ul>
                 <li className="footer__title">با دیجی‌کالا</li>
                 <li className="footer__link">
