@@ -1,0 +1,78 @@
+.product-list {
+  background-color: $white-color;
+  .product {
+    &__box {
+      border: 1px solid $light-gray-color;
+      text-align: center;
+      padding: 10px;
+      transition: all 0.3s;
+      height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: $white-color;
+      z-index: 1;
+
+      &:hover {
+        box-shadow: 0 2px 17px 0 rgba(0, 0, 0, 0.15);
+        transition: all 0.3s;
+        z-index: 99;
+      }
+    }
+    &__image {
+      height: 200px;
+    }
+    &__title {
+      font-size: 14px;
+      color: $text-color;
+      font-family: iransans-light;
+      text-align: right;
+    }
+    &__price {
+      font-size: 15px;
+      color: $text-color;
+      text-decoration: line-through;
+    }
+    &__paid-price {
+      font-size: 20px;
+      font-family: iransans-bold;
+    }
+    &__currency {
+      font: 10px;
+      font-family: iransans-light;
+      margin-right: 5px;
+    }
+    &__discount {
+      background-color: $red-color;
+      font-family: iransans-bold;
+      padding: 0 10px;
+      border-radius: 100px;
+      color: #fff;
+      margin-right: 7px;
+    }
+    &__button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 8px;
+      background-color: $red-color;
+      color: $white-color;
+      font-size: 25px;
+      &:hover {
+        cursor: pointer;
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+    &__rate {
+      font-size: 14px;
+      color: $text-color;
+    }
+    &__rate-icon {
+      width: 14px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  }
+}

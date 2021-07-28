@@ -1,9 +1,13 @@
 import React from "react";
+import ProductList from "./productList";
 
 const Home = () => {
   return (
     <>
-      <h1 className="text-center">Home Page</h1>
+      <div
+        style={{ width: "100%", minHeight: "500px", backgroundColor: "#000" }}
+      ></div>
+      <ProductList />
     </>
   );
 };
