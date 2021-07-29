@@ -20,13 +20,13 @@
   }
   &__button {
     border: none;
-    padding: 20px 40px;
+    padding: 10px 20px;
     background-color: $red-color;
     color: $white-color;
     border-radius: 8px;
     cursor: pointer;
     &:active {
-      transform: scale(0.9);
+      transform: scale(0.97);
     }
   }
 }
