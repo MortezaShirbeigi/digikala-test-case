@@ -76,3 +76,20 @@
     }
   }
 }
+
+.filter {
+  &__button {
+    border: none;
+    margin: 0 10px;
+    background-color: $dark-gray-color;
+    color: $white-color;
+    padding: 5px 10px;
+    border-radius: 8px;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}

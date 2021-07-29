@@ -10,10 +10,9 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Layout>
-          <Route exact path="/" component={Home} />
+          <Route path="/" component={Home} />
           <Route path="/cart" component={Cart} />
           <Route path="/product/:id" component={ProductDetail} />
-          {/* <Route component={NotFound} /> */}
         </Layout>
       </Switch>
     </BrowserRouter>

@@ -5,9 +5,13 @@ import LinkeIcon from "../../assets/images/like.svg";
 import { useParams, withRouter } from "react-router-dom";
 import Loading from "../../components/loading";
 import { getData } from "../../utilities/requests";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, increaseQuantity } from "../../redux/cart/cart.actions";
 
 const ProductDetail = ({ history }) => {
   const [product, setProduct] = useState(null);
+  const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart);
 
   let { id } = useParams();
 
@@ -67,7 +71,21 @@ const ProductDetail = ({ history }) => {
           <span>{`${product.rating.rate}٪ (${product.rating.count} نفر) از خریداران، این کالا را پیشنهاد کرده‌اند.`}</span>
         </div>
         <div>
-          <button className="product-detail__button">افزودن به سبد خرید</button>
+          {cartData.cartProducts.find((product) => product.id === id) ? (
+            <button
+              className="product-detail__button"
+              onClick={() => dispatch(addToCart(product))}
+            >
+              افزودن به سبد خرید
+            </button>
+          ) : (
+            <button
+              className="product-detail__button"
+              onClick={() => dispatch(increaseQuantity(product.id))}
+            >
+              افزودن به سبد خرید
+            </button>
+          )}
         </div>
       </div>
     </div>

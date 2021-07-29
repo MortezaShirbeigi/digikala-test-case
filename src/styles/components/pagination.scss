@@ -1,0 +1,38 @@
+.pagination {
+  &__number {
+    font-size: 15px;
+    font-family: iransans-medium;
+  }
+
+  &__button {
+    padding: 5px 10px;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--disabled {
+      opacity: 0.2;
+      &:hover {
+        cursor: unset;
+      }
+    }
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+  }
+}

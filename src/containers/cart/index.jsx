@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Image from "../../components/image";
 import {
   clearCart,
@@ -36,7 +36,9 @@ const Cart = ({ history }) => {
                     <Image url={image} className="cart__image" />
                   </div>
                 </div>
-                <div className="col-5 border-right text-center">{title}</div>
+                <div className="col-5 border-right text-center">
+                  <Link to={`product/${id}`}>{title}</Link>
+                </div>
                 <div className="col-2 border-right">
                   <p className="text-center">{price}</p>
                 </div>
