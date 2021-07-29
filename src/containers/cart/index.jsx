@@ -1,7 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import Image from "../../components/image";
+import { addToCart, removeFromCart } from "../../redux/cart/cart.actions";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+
   const products = [
     {
       title: "کرم دور چشم نئودرم مدل Multi Efficacy حجم 15 میلی لیتر",
@@ -38,10 +42,13 @@ const Cart = () => {
       <div className="col-12 my-60">
         <h1>سبد خرید</h1>
         {products.length &&
-          products.map((product) => {
+          products.map((product, index) => {
             console.log(product);
             return (
-              <div className="container my-20 py-10 justify-center align-center cart-item">
+              <div
+                key={index}
+                className="container my-20 py-10 justify-center align-center cart-item"
+              >
                 <div className="col-1 text-center border-left">
                   <div className="flex justify-center">
                     <Image url={product.image} className="cart__image" />
@@ -58,10 +65,16 @@ const Cart = () => {
                 </div>
                 <div className="col-2 border-right">
                   <div className="flex justify-center align-center">
-                    <button className="cart-item__button">
+                    <button
+                      className="cart-item__button"
+                      onClick={() => dispatch(addToCart())}
+                    >
                       <div className="plus"></div>
                     </button>
-                    <button className="cart-item__button">
+                    <button
+                      className="cart-item__button"
+                      onClick={() => dispatch(removeFromCart())}
+                    >
                       <div className="minus"></div>
                     </button>
                   </div>

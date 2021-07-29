@@ -1,5 +1,10 @@
 .header {
   background-color: $white-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
   &__container {
     height: 100px;
     justify-content: space-between;
@@ -26,8 +31,25 @@
       color: $nav-item-color;
     }
   }
-  &__list-icon {
-    vertical-align: bottom;
-    width: 23px;
+  &__list-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .navbar-cart {
+    position: relative;
+    &__icon {
+      vertical-align: bottom;
+      width: 23px;
+    }
+    &__count {
+      position: absolute;
+      right: -5px;
+      top: -15px;
+      font-family: iransans-bold;
+      color: $red-color;
+      color: $red-color;
+      z-index: 99;
+    }
   }
 }
