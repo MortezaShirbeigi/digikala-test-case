@@ -9,3 +9,7 @@
 .w100 {
   width: 100%;
 }
+
+.min-vh100 {
+  min-height: calc(100vh - 415px);
+}

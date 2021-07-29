@@ -1,0 +1,18 @@
+// general styles
+@import "./generals/variables.scss";
+@import "./generals/fonts.scss";
+@import "./generals/utilities.scss";
+@import "./generals/reset.scss";
+@import "./generals/grid.scss";
+@import "./generals/spacing.scss";
+@import "./generals/borders.scss";
+@import "./generals/alignment.scss";
+
+// components styles
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/loading.scss";
+
+// pages styles
+@import "./pages/home.scss";
+@import "./pages/productDetail.scss";

@@ -1,4 +1,4 @@
-import "../../styles/generals/App.scss";
+import "../../styles/App.scss";
 import Layout from "../../components/layout";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../home";

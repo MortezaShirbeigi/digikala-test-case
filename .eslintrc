@@ -2,9 +2,9 @@
   "parser": "babel-eslint",
   "extends": ["react-app", "plugin:prettier/recommended"],
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto"
       }
