@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getDiscount, numberWithCommas } from "../../utilities";
 import StarIcon from "../../assets/images/star.svg";
-import { addToCart } from "../../redux/cart/cart.actions";
-import { useDispatch } from "react-redux";
+import { increaseQuantity, addToCart } from "../../redux/cart/cart.actions";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "../../components/image";
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart);
   const { title, id } = product;
   const { count, rate } = product.rating;
   const { rrp_price: price, selling_price: paidPrice } = product.price;
@@ -39,15 +40,24 @@ const ProductItem = ({ product }) => {
         </div>
         <div className="flex justify-space-between align-center">
           <div>
-            <button
-              className="product__button"
-              onClick={() => addToCart(dispatch)}
-            >
-              +
-            </button>
+            {cartData.cartProducts.find((product) => product.id === id) ? (
+              <button
+                className="product__button"
+                onClick={() => dispatch(increaseQuantity(id))}
+              >
+                +
+              </button>
+            ) : (
+              <button
+                className="product__button"
+                onClick={() => dispatch(addToCart(product))}
+              >
+                +
+              </button>
+            )}
           </div>
           <div className="text-end">
-            {price === paidPrice && (
+            {price !== paidPrice && (
               <div>
                 <span className="product__discount">
                   {getDiscount(price, paidPrice)}

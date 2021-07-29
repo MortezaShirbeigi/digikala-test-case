@@ -3,8 +3,6 @@ import Loading from "../../components/loading";
 import ProductItem from "./productItem";
 
 const ProductList = ({ products }) => {
-  console.log(products);
-
   return products ? (
     <div className="container my-60 product-list">
       {products &&
