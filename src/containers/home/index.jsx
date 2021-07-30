@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 import { getData } from "../../utilities/requests";
 import Pagination from "./pagination";
 import ProductList from "./productList";
-import queryString from "query-string";
 import FilterProducts from "./filterProducts";
 
 const Home = ({ history }) => {

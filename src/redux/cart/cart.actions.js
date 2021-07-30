@@ -15,3 +15,7 @@ export const decreaseQuantity = (id) => {
 export const clearCart = () => {
   return { type: actionTypes.CLEAR_CART };
 };
+
+export const loadProducts = (data) => {
+  return { type: actionTypes.LOAD_PRODUCTS, data };
+};

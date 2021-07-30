@@ -15,6 +15,6 @@
 @import "./components/pagination.scss";
 
 // pages styles
-@import "./pages/home.scss";
-@import "./pages/productDetail.scss";
-@import "./pages/cart.scss";
+@import "./containers/home.scss";
+@import "./containers/productDetail.scss";
+@import "./containers/cart.scss";

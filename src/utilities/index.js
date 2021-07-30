@@ -13,3 +13,11 @@ export const getDiscount = (price, paidPrice) => {
   const percentDiscount = (totalDiscount / price) * 100;
   return `${percentDiscount.toFixed()}%`;
 };
+
+export const setItemLocalStorage = (name, value) => {
+  localStorage.setItem(name, value);
+};
+
+export const getItemLocalStorage = (name) => {
+  return localStorage.getItem(name);
+};

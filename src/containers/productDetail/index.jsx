@@ -15,6 +15,8 @@ const ProductDetail = ({ history }) => {
 
   let { id } = useParams();
 
+  console.log("product detailllll");
+
   useEffect(() => {
     (async () => {
       try {
