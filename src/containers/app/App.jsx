@@ -1,6 +1,6 @@
 import "../../styles/App.scss";
 import Layout from "../../components/layout";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Home from "../home";
 import Cart from "../cart";
 import ProductDetail from "../productDetail";
@@ -32,6 +32,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/cart" component={Cart} />
             <Route path="/product/:id" component={ProductDetail} />
+            <Redirect from="*" to="/" />
           </Layout>
           <Modal>
             <CartTable />

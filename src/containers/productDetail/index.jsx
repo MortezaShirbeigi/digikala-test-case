@@ -16,8 +16,6 @@ const ProductDetail = ({ history }) => {
 
   let { id } = useParams();
 
-  console.log("product detailllll");
-
   useEffect(() => {
     const source = axios.CancelToken.source();
 
@@ -29,7 +27,6 @@ const ProductDetail = ({ history }) => {
           setProduct(data.product);
         }, 1000);
       } catch (error) {
-        console.log(error);
         setTimeout(() => {
           history.push("/");
         }, 1000);

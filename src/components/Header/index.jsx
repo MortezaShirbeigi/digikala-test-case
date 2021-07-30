@@ -50,7 +50,7 @@ function Header({ history }) {
             </Link>
             <input
               className="flex-auto rounded8 header__search"
-              placeholder="جستجو در وبسایت دیجی‌کالا"
+              placeholder="جستجو در دیجی‌کالا"
               type="text"
               onChange={searchHandler}
             />

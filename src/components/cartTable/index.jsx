@@ -12,6 +12,7 @@ import { toggleModal } from "../../redux/app/app.actions";
 
 const CartTable = ({ history }) => {
   const cartData = useSelector((state) => state.cart);
+  const appState = useSelector((state) => state.app);
   const { cartProducts: products } = cartData;
 
   const dispatch = useDispatch();
@@ -68,7 +69,9 @@ const CartTable = ({ history }) => {
                 onClick={() => {
                   dispatch(clearCart());
                   history.push("/");
-                  dispatch(toggleModal());
+                  if (appState.modalStatus) {
+                    dispatch(toggleModal());
+                  }
                 }}
               >
                 نهایی کردن سبد خرید

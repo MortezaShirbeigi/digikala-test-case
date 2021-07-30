@@ -6,6 +6,8 @@ import Pagination from "./pagination";
 import ProductList from "./productList";
 import FilterProducts from "./filterProducts";
 import axios from "axios";
+import BannerImage from "../../assets/images/banner.jpg";
+import Image from "../../components/image";
 
 const Home = ({ history }) => {
   const [productList, setProductList] = useState([]);
@@ -35,9 +37,12 @@ const Home = ({ history }) => {
 
   return (
     <>
-      <div
-        style={{ width: "100%", minHeight: "500px", backgroundColor: "#000" }}
-      ></div>
+      <Image
+        url={BannerImage}
+        alt="المپیک دیجی‌کالا"
+        width="100%"
+        height="auto"
+      />
       <FilterProducts />
       <ProductList products={productList.products} />
       <Pagination pager={productList.pager} />
