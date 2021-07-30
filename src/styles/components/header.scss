@@ -41,6 +41,9 @@
     &__icon {
       vertical-align: bottom;
       width: 23px;
+      &:hover {
+        cursor: pointer;
+      }
     }
     &__count {
       position: absolute;

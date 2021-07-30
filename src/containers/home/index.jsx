@@ -5,26 +5,32 @@ import { getData } from "../../utilities/requests";
 import Pagination from "./pagination";
 import ProductList from "./productList";
 import FilterProducts from "./filterProducts";
+import axios from "axios";
 
 const Home = ({ history }) => {
   const [productList, setProductList] = useState([]);
 
-  const getProductList = async (url) => {
+  const getProductList = async (url, cancelToken) => {
     try {
-      const data = await getData(url);
+      const data = await getData(url, cancelToken);
       setProductList(data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     // first request
     getProductList(
       history.location.search
         ? `search/${history.location.search}`
-        : "/search/?page=1&rows=16"
+        : "/search/?page=1&rows=16",
+      source.token
     );
+
+    return () => source.cancel();
   }, [history.location.search]);
 
   return (

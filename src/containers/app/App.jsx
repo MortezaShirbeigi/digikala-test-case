@@ -9,6 +9,8 @@ import { useDispatch } from "react-redux";
 import { loadProducts } from "../../redux/cart/cart.actions";
 import { getItemLocalStorage } from "../../utilities";
 import { constant } from "../../utilities/constant";
+import Modal from "../../components/modal";
+import CartTable from "../../components/cartTable";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,11 +27,16 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Layout>
-          <Route exact path="/" component={Home} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/product/:id" component={ProductDetail} />
-        </Layout>
+        <>
+          <Layout>
+            <Route exact path="/" component={Home} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/product/:id" component={ProductDetail} />
+          </Layout>
+          <Modal>
+            <CartTable />
+          </Modal>
+        </>
       </Switch>
     </BrowserRouter>
   );

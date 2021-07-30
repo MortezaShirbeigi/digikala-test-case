@@ -1,0 +1,36 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  background-color: $light-gray-color;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.15);
+  transition: all 0.5s;
+  padding: 50px;
+  width: 90vw;
+  max-height: 90vh;
+  border-radius: 20px;
+  z-index: -1;
+  &__container--hide {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  &__container--show {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    z-index: 100;
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}

@@ -7,6 +7,7 @@ import Loading from "../../components/loading";
 import { getData } from "../../utilities/requests";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, increaseQuantity } from "../../redux/cart/cart.actions";
+import axios from "axios";
 
 const ProductDetail = ({ history }) => {
   const [product, setProduct] = useState(null);
@@ -18,9 +19,11 @@ const ProductDetail = ({ history }) => {
   console.log("product detailllll");
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     (async () => {
       try {
-        const data = await getData(`product/${id}/`);
+        const data = await getData(`product/${id}/`, source.token);
         // delay for show better loading
         setTimeout(() => {
           setProduct(data.product);
@@ -32,6 +35,8 @@ const ProductDetail = ({ history }) => {
         }, 1000);
       }
     })();
+
+    return () => source.cancel();
   }, [id, history]);
 
   return product ? (
@@ -73,17 +78,19 @@ const ProductDetail = ({ history }) => {
           <span>{`${product.rating.rate}٪ (${product.rating.count} نفر) از خریداران، این کالا را پیشنهاد کرده‌اند.`}</span>
         </div>
         <div>
-          {cartData.cartProducts.find((product) => product.id === id) ? (
+          {cartData.cartProducts.find(
+            (product) => product.id === Number(id)
+          ) ? (
             <button
               className="product-detail__button"
-              onClick={() => dispatch(addToCart(product))}
+              onClick={() => dispatch(increaseQuantity(product.id))}
             >
               افزودن به سبد خرید
             </button>
           ) : (
             <button
               className="product-detail__button"
-              onClick={() => dispatch(increaseQuantity(product.id))}
+              onClick={() => dispatch(addToCart(product))}
             >
               افزودن به سبد خرید
             </button>

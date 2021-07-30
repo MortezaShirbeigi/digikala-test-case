@@ -1,13 +1,30 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import queryString from "query-string";
 
 const Pagination = ({ history, pager }) => {
   const nextPageHandler = () => {
-    history.replace(`?page=${pager && pager.current_page + 1}&rows=16`);
+    // save old location and add new location to route
+    const location = queryString.parse(history.location.search);
+    const newLocation = queryString.stringify({
+      ...location,
+      page: pager && pager.current_page + 1,
+      row: 16,
+    });
+
+    history.replace(`?${newLocation}`);
   };
 
   const backPageHandler = () => {
-    history.replace(`?page=${pager && pager.current_page - 1}&rows=16`);
+    // save old location and add new location to route
+    const location = queryString.parse(history.location.search);
+    const newLocation = queryString.stringify({
+      ...location,
+      page: pager && pager.current_page - 1,
+      row: 16,
+    });
+
+    history.replace(`?${newLocation}`);
   };
 
   return (

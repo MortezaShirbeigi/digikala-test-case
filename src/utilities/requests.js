@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getData = (url) => {
+export const getData = (url, cancelToken = {}) => {
   return new Promise((resolve, reject) => {
     axios
       .get(url, {
@@ -8,12 +8,12 @@ export const getData = (url) => {
         headers: {
           token: "mpfKW9ghVTCSuBZ7qTkSmEyvL38ShZxv",
         },
+        cancelToken,
       })
       .then((res) => {
         resolve(res.data.data);
       })
       .catch((error) => {
-        console.log(error);
         reject(error);
       });
   });
