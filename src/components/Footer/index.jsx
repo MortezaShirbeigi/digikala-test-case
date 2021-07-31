@@ -5,6 +5,7 @@ import LinkedinIcon from "../../assets/images/linkedin.svg";
 import AparatIcon from "../../assets/images/aparat.svg";
 
 const Footer = () => {
+  
   return (
     <footer className="footer py-60">
       <div className="container ">

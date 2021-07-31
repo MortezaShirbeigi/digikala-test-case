@@ -37,6 +37,7 @@ function Header({ history }) {
     });
   };
   return (
+    
     <header className="header">
       <div className="container align-center header__container">
         <div className="col-5">
