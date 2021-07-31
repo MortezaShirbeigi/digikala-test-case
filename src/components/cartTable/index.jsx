@@ -33,7 +33,7 @@ const CartTable = ({ history }) => {
                   className="container my-20 py-10 justify-center align-center cart-item"
                 >
                   <div className="col-1 text-center border-left">
-                    <div className="flex justify-center">
+                    <div>
                       <Image url={image} className="cart__image" />
                     </div>
                   </div>
